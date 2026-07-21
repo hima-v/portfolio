@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+    content="Hima Verma — M.S. Computer Science @ UC Davis. I build thoughtful, secure systems that turn complex data into usable decisions." />
+  <title>Hima Verma | Portfolio</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hima Verma | Portfolio" />
+  <meta property="og:description"
+    content="Warm, thoughtful engineering across ML/data systems, software, security (PQC), and analytics — built to be usable and secure by default." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts (no frameworks; optional web fonts for premium typography) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <span class="brand-mark" aria-hidden="true">HV</span>
+        <span class="brand-text">Hima Verma</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"
+          aria-label="Open menu">
+          <span class="nav-toggle-lines" aria-hidden="true"></span>
+        </button>
+
+        <ul class="nav-links" aria-label="Primary links">
+          <li><a href="#how-i-build">How I Build</a></li>
+          <li><a href="#focus">Focus</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#ai">AI</a></li>
+          <li><a class="link-accent" href="#connect">Connect</a></li>
+        </ul>
+
+        <!-- Mobile menu (slide-in) -->
+        <div class="mobile-menu" id="mobile-menu" hidden>
+          <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Navigation menu">
+            <div class="mobile-menu-panel-inner">
+              <div class="mobile-menu-head">
+                <p class="mobile-menu-title">Menu</p>
+                <button class="mobile-menu-close" type="button" aria-label="Close menu">Close</button>
+              </div>
+              <ul class="mobile-menu-links">
+                <li><a href="#how-i-build">How I Build</a></li>
+                <li><a href="#focus">Focus</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#work">Selected Work</a></li>
+                <li><a href="#ai">Building with AI</a></li>
+                <li><a class="link-accent" href="#connect">Connect</a></li>
+              </ul>
+              <p class="mobile-menu-foot">
+                <span class="pill">Warm</span>
+                <span class="pill">Security-conscious</span>
+                <span class="pill">Data-driven</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="site-main" role="main">
+    <section id="top" class="hero" aria-label="Introduction">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <div class="hero-kicker">
+            <span class="kicker-dot" aria-hidden="true"></span>
+            <p class="kicker-text">
+              M.S. Computer Science at UC Davis. Focused on machine learning, data systems, and security conscious
+              engineering.
+            </p>
+          </div>
+
+          <h1>Hi, I’m Hima.</h1>
+
+          <p class="hero-intro">
+            I’m warm, curious, and quietly ambitious — the kind of builder who cares about the last 10%: how something
+            feels to use, how it behaves under real data, and how it holds up under security review. Also: I’m a cat
+            person.
+          </p>
+
+          <p class="hero-statement">
+            <span class="statement-mark" aria-hidden="true"></span>
+            I build thoughtful, secure systems that turn complex data into usable decisions.
+          </p>
+
+          <div class="hero-cta" role="group" aria-label="Primary actions">
+            <a class="btn btn-primary" href="#work">Projects</a>
+            <a class="btn btn-secondary" href="#connect">Connect</a>
+          </div>
+
+          <!-- <dl class="meta">
+            <div class="meta-item">
+              <dt>Location</dt>
+              <dd>Davis, CA</dd>
+            </div>
+            <div class="meta-item">
+              <dt>Seeking</dt>
+              <dd>Summer 2026 internships (SWE / ML / Data / Security)</dd>
+            </div>
+          </dl>
+        </div> -->
+
+        <aside class="hero-aside" aria-label="Accent and highlights">
+          <div class="accent-card">
+            <div class="accent-circle" aria-hidden="true"></div>
+            <p class="accent-title">What you’ll find here</p>
+            <p class="accent-body">
+              A small set of projects and narratives that show how I think. I love storytelling and here is my journey.
+            </p>
+            <div class="accent-lines" aria-hidden="true"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="how-i-build" class="section" aria-label="Design philosophy">
+      <div class="container">
+        <header class="section-head">
+          <h2>How I Build</h2>
+          <p class="lede">
+            I like simple surfaces with strong foundations. I prefer clean UX, careful data handling, and a security
+            posture
+            that’s intentional, not performative.
+          </p>
+        </header>
+
+        <div class="grid grid-2 philosophy">
+          <article class="card card-line">
+            <h3>Usability &amp; Target Audience First</h3>
+            <p>
+              I start by defining the user, the decision they’re trying to make, and the moments where confusion shows
+              up. The best engineering still fails if the interface doesn’t respect attention and context.
+            </p>
+          </article>
+          <article class="card card-line">
+            <h3>Simple but Powerful UI</h3>
+            <p>
+              I design for clarity: strong typography, honest layouts, and just enough interaction to make complexity
+              feel approachable.
+            </p>
+          </article>
+          <article class="card card-line">
+            <h3>Secure by Default</h3>
+            <p>
+              I build with OWASP-style thinking: safe inputs, least privilege, and predictable failure modes. I’m also
+              CWE-aware, so I treat security as an engineering constraint from day one.
+            </p>
+          </article>
+          <article class="card card-line">
+            <h3>Creative &amp; Data-Driven</h3>
+            <p>
+              I enjoy turning messy signals into understandable stories with reliable pipelines, thoughtful evaluation,
+              and visualizations that earn trust through transparency.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="focus" class="section section-tinted" aria-label="Focus areas">
+      <div class="container">
+        <header class="section-head">
+          <h2>Focus Areas</h2>
+          <p class="lede">Four lanes I keep returning to because they’re where product impact and real engineering
+            meet.</p>
+        </header>
+
+        <div class="grid grid-focus">
+          <article class="card focus-card">
+            <h3>Machine Learning &amp; Data Systems</h3>
+            <p class="focus-what"><strong>What:</strong> Neural Networks, CNN,Supervised Learning, Unsupervised
+              Learning, Time-series modeling, evaluation design, and reliable
+              feature/data pipelines.</p>
+            <p class="focus-why"><strong>Why I care:</strong> The best models are the ones you can trust, reproduce, and
+              ship.</p>
+            <!-- <p class="focus-cred">
+              <strong>Why I’m credible:</strong> ML + data systems coursework, plus a local-first workflow with
+              validation + walk-forward evaluation and a shipped prediction API.
+            </p> -->
+            <div class="focus-coursework">
+              <p class="focus-coursework-title">Coursework:</p>
+              <ul class="focus-coursework-list">
+                <li>ECS 271 Machine Learning &amp; Discovery</li>
+                <li>Artificial Intelligence</li>
+                <li>Linear Algebra</li>
+                <li>Engineering Mathematics</li>
+                <li>Stanford CS229, MIT 6.S191 (YouTube deep dives for ML)</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card focus-card">
+            <h3>Software Engineering</h3>
+            <p class="focus-what"><strong>What:</strong> Clean interfaces, services, dashboards, and developer-friendly
+              systems.</p>
+            <p class="focus-why"><strong>Why I care:</strong> I love the craft: sharp edges removed, friction reduced,
+              reliability increased.</p>
+            <!-- <p class="focus-cred">
+              <strong>Why I’m credible:</strong> Systems/software coursework, plus production-minded apps with OAuth
+              flows, API integration, and deployment constraints in mind.
+            </p> -->
+            <div class="focus-coursework">
+              <p class="focus-coursework-title">Coursework:</p>
+              <ul class="focus-coursework-list">
+                <li>ECS 260 Software Engineering</li>
+                <li>Operating Systems</li>
+                <li>Data Structures and Algorithms</li>
+                <li>Distributed Computing</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card focus-card">
+            <h3>Security &amp; Post‑Quantum Cryptography</h3>
+            <p class="focus-what"><strong>What:</strong> Security assumptions, attack surfaces, and performance
+              trade-offs — including PQC.</p>
+            <p class="focus-why"><strong>Why I care:</strong> Security is user trust. It’s not optional — it’s the
+              baseline.</p>
+            <p class="focus-cred">
+              <strong>My Bachelor's Thesis:</strong> Explored how cryptographic systems must evolve in a post-quantum
+              world. I examined NIST-selected
+              algorithms such as Falcon, Kyber, Dilithium, and SPHINCS+, analyzing their security models, computational
+              trade-offs,
+              and implementation challenges. The project deepened my interest in security as both mathematics and
+              engineering
+              discipline
+            </p>
+            <div class="focus-coursework">
+              <p class="focus-coursework-title">Coursework:</p>
+              <ul class="focus-coursework-list">
+                <li>Cryptography and System Security</li>
+                <li>Ethical Hacking and Security</li>
+                <li>Cybersecurity and Laws</li>
+                <li>Computer Networks</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="card focus-card">
+            <h3>Analytics &amp; Decision Systems</h3>
+            <p class="focus-what"><strong>What:</strong> SQL analytics, dashboards, and turning raw activity into real
+              decisions.</p>
+            <p class="focus-why"><strong>Why I care:</strong> I’m happiest when data becomes a clear next step.</p>
+            <!-- <p class="focus-cred">
+                          <strong>Why I’m credible:</strong> Security-focused coursework, plus PQC research evaluating
+                          NIST-shortlisted algorithms (Falcon, Kyber, Dilithium, SPHINCS+) across security + performance.
+                        </p> -->
+            <div class="focus-coursework">
+              <p class="focus-coursework-title">Coursework:</p>
+              <ul class="focus-coursework-list">
+                <li>Applied Data Science</li>
+                <li>STA 220 Data &amp; Web Technologies</li>
+                <li>Big Data Analytics</li>
+                <li>Datawarehousing and Mining</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-tinted" aria-label="Experience">
+      <div class="container">
+        <header class="section-head">
+          <h2>Experience</h2>
+        </header>
+
+        <div class="timeline" role="list">
+          <article class="timeline-item" role="listitem">
+            <div class="timeline-rail" aria-hidden="true">
+              <span class="timeline-dot"></span>
+              <span class="timeline-line"></span>
+            </div>
+            <div class="timeline-card">
+              <h3>Student Developer Assistant <span class="muted">— Development and Alumni Relations, UC Davis</span>
+              </h3>
+              <p class="timeline-meta">Nov 2025 – Present</p>
+              <ul class="exp-bullets">
+                <li>Designing and maintaining internal analytical systems for operational and engagement insights</li>
+                <li>Building dimensional data models (Snowflake schema) across SharePoint and Microsoft Dataverse with
+                  reliable extraction and validation</li>
+                <li>Developing secure, role based dashboards for cross functional teams to monitor engagement,
+                  operations, and RFP tracking</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item" role="listitem">
+            <div class="timeline-rail" aria-hidden="true">
+              <span class="timeline-dot"></span>
+              <span class="timeline-line"></span>
+            </div>
+            <div class="timeline-card">
+              <h3>Research Engineer Intern <span class="muted">— JobRobo</span></h3>
+              <p class="timeline-meta">Jul 2023 – Mar 2024</p>
+              <ul class="exp-bullets">
+                <li>Built Python based pipelines to curate and standardize 1,000+ startup records for downstream
+                  modeling</li>
+                <li>Applied clustering, association rule mining, and statistical methods to improve analytical accuracy
+                  by ~25%</li>
+                <li>Designed a quantitative TAM estimation framework, reducing market research turnaround time by ~30%
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section" aria-label="Selected work">
+      <div class="container">
+        <header class="section-head">
+          <h2>Selected Work</h2>
+          <p class="lede">These are some projects which I have built during my journey as a developer.
+            My motivation to do a project has always stemmed from a problem that I have recognized around me.
+          </p>
+        </header>
+
+        <div class="grid grid-work">
+          <article class="card project-card">
+            <h3>Financial Markets Analysis</h3>
+            <div class="project-block">
+              <p><span class="project-label">Problem:</span> Most “finance ML” demos look impressive but quietly break
+                time-series rules and produce misleading results. I wanted to allow people from all backgrounds to
+                explore Financial Stock Market Datasets and visualize the data in a way that is easy to understand and
+                use.</p>
+              <p>
+                <span class="project-label">Solution:</span> Built a local-first workflow with dataset validation,
+                time-series-safe evaluation, and a clean API
+                surface (dashboard + backend) to keep experiments reproducible.
+              </p>
+              <p><span class="project-label">Impact:</span> A trustworthy baseline for iterating on models without
+                losing rigor.</p>
+            </div>
+            <div class="tags" aria-label="Technologies used">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">Streamlit</span>
+              <span class="tag">pandas</span>
+              <span class="tag">scikit-learn</span>
+            </div>
+            <div class="project-actions" aria-label="Project links">
+              <a class="btn btn-small btn-live" href="https://finstock-market-analysis.streamlit.app/" target="_blank"
+                rel="noreferrer noopener">Live App</a>
+              <a class="btn btn-small btn-outline" href="https://github.com/hima-v/Financial-Markets-Analysis"
+                target="_blank" rel="noreferrer noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>Spotify Automation</h3>
+            <div class="project-block">
+              <p><span class="project-label">Problem:</span> My friends always complained that they loved tracks of
+                Spotify Discover Weekly Playlist but had to save them all the time. Great recommendations disappear fast
+                and “liking” tracks
+                isn’t the same as building an intentional library.</p>
+              <p><span class="project-label">Solution:</span> Built an OAuth-based app that safely saves Discover Weekly
+                tracks into a curated playlist with clean token handling.</p>
+              <p><span class="project-label">Impact:</span> Turns weekly discovery into a durable, searchable archive.
+              </p>
+            </div>
+            <div class="tags" aria-label="Technologies used">
+              <span class="tag">Next.js</span>
+              <span class="tag">Celery</span>
+              <span class="tag">Redis</span>
+              <span class="tag">OAuth 2.0</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <div class="project-actions" aria-label="Project links">
+              <a class="btn btn-small btn-live" href="https://spotify-automation-nu.vercel.app" target="_blank"
+                rel="noreferrer noopener">Live App</a>
+              <a class="btn btn-small btn-outline" href="https://github.com/hima-v/Spotify-Automation" target="_blank"
+                rel="noreferrer noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>Interactive Learning Platform (PGM Virtual Lab)</h3>
+            <div class="project-block">
+              <p>
+                <span class="project-label">Problem:</span> There was no online interactive lab for Probabilistic
+                Graphical Models and my professor had to use different platforms. The students learned theory
+                but lacked a visual, hands-on environment for Bayesian networks, Markov chains, or inference.
+              </p>
+              <p>
+                <span class="project-label">Solution:</span> Built a full-stack platform (React + lightweight REST
+                backend) for real-time visual modeling and execution,
+                with interactive Python modules for Bayesian modeling, Markov chains, and MLE. Later extended it into a
+                cross-platform mobile app using GoNative.
+              </p>
+              <p><span class="project-label">Impact:</span> Enabled hands-on probabilistic learning and expanded access
+                beyond the classroom.</p>
+            </div>
+            <div class="tags" aria-label="Technologies used">
+              <span class="tag">React</span>
+              <span class="tag">Javascript</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Python</span>
+              <span class="tag">GoNative</span>
+            </div>
+            <div class="project-actions" aria-label="Project links">
+              <a class="btn btn-small btn-live" href="https://pgm.kjsieit.com/theory/index.html" target="_blank"
+                rel="noreferrer noopener">Live App</a>
+              <a class="btn btn-small btn-outline" href="https://github.com/hima-v/vortex/tree/master" target="_blank"
+                rel="noreferrer noopener">GitHub</a>
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <h3>LLMs for CWE (Ongoing Research) <span class="sr-only">Ongoing</span></h3>
+            <div class="project-block">
+              <p>
+                <span class="project-label">Problem:</span> When LLMs generate code, what types of security
+                vulnerabilities emerge and how do they map to established CWE
+                categories? Additionally, how do different prompting strategies influence whether generated code is
+                secure, insecure, or
+                misleading?
+              </p>
+              <p>
+                <span class="project-label">Solution:</span> Systematically analyzing LLM generated code against CWE
+                standards, evaluating vulnerability patterns, and experimenting
+                with structured prompting techniques to measure how constraints, context, and security guidance affect
+                output quality
+                and risk exposure.
+              </p>
+              <p><span class="project-label">Impact:</span> Developing a structured evaluation approach for
+                understanding how prompt design influences software security and
+                identifying patterns that lead to safer AI generated code.</p>
+            </div>
+            <div class="tags" aria-label="Technologies used">
+              <span class="tag tag-accent">Currently Exploring</span>
+              <span class="tag">Security</span>
+              <span class="tag">LLMs</span>
+              <span class="tag">CWE</span>
+              <span class="tag">Software Engineering</span>
+            </div>
+            <div class="project-actions" aria-label="Project links">
+              <a class="btn btn-small btn-outline" href="https://github.com/hima-v/LLMs-for-CWE" target="_blank"
+                rel="noreferrer noopener">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="ai" class="section section-tinted" aria-label="Building with AI">
+      <div class="container">
+        <header class="section-head">
+          <h2>Building with AI, Intentionally</h2>
+          <p class="lede">I use AI like a power tool: with structure, intent, and a clear definition of “done.”</p>
+        </header>
+
+        <div class="grid grid-2">
+          <article class="card">
+            <h3>Cursor as a workflow, not a shortcut</h3>
+            <p>
+              I don’t “vibe code.” I treat AI as a productivity layer, not a substitute for thinking. I design the
+              system architecture, write core
+              functionality and API logic myself, and use AI to accelerate repetitive or mechanical tasks such as
+              styling refinements,
+              refactoring patterns, and documentation.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Evaluation first</h3>
+            <p>
+              I approach AI tools the same way I approach models: define the objective, test assumptions, measure output
+              quality, and
+              refine. Efficiency is valuable, but only when results are reliable.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Continuous learning and upskilling</h3>
+            <p>
+              I stay current by reading research papers, exploring new tooling, and studying early stage startups
+              including companies
+              emerging from Y Combinator. I’m interested in how ideas move from research to real products and I actively
+              experiment
+              with new tools to understand their practical limits.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Built on real experience</h3>
+            <p>
+              Three years ago, I was already analyzing AI startups and building ML-driven market intelligence models as
+              a Research Engineer Intern
+              so my relationship with AI is long-term,
+              practical, and grounded in outcomes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="connect" class="section" aria-label="Contact">
+      <div class="container">
+        <header class="section-head">
+          <h2>Connect</h2>
+          <p class="lede">
+            I am open to new opportunities and always enjoy thoughtful conversations with founders building user
+            centered products especially in data driven
+            systems and finance.
+          </p>
+        </header>
+
+        <div class="grid grid-3 connect-grid" role="list">
+          <a class="card contact-card" href="mailto:hima.v2402@gmail.com" role="listitem">
+            <p class="contact-label">Email</p>
+            <p class="contact-value">hima.v2402@gmail.com</p>
+            <p class="contact-note">Best for professional outreach and industry opportunities.</p>
+
+            <p class="contact-label">College Email</p>
+            <p class="contact-value">imaverma@ucdavis.edu</p>
+            <p class="contact-note contact-note">Best for academic and research conversations.</p>
+          </a>
+
+          <a class="card contact-card" href="https://www.linkedin.com/in/hima-verma/" target="_blank"
+            rel="noreferrer noopener" role="listitem">
+            <p class="contact-label">LinkedIn</p>
+            <p class="contact-value">hima-verma</p>
+            <p class="contact-note">Building my professional network.</p>
+          </a>
+
+          <a class="card contact-card" href="https://github.com/hima-v" target="_blank" rel="noreferrer noopener"
+            role="listitem">
+            <p class="contact-label">GitHub</p>
+            <p class="contact-value">hima-v</p>
+            <p class="contact-note">Code, Projects, Experiments.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Hima Verma.</p>
+      <a class="back-to-top" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
