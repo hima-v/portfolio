@@ -30,7 +30,6 @@
       <nav aria-label="Primary">
         <ul class="nav">
           <li><a href="#endeavours">Endeavours</a></li>
-          <li><a href="#fieldvision">FieldVision</a></li>
           <li><a href="#work">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
           <li><a href="#research">Research</a></li>
@@ -136,113 +135,6 @@
       </div>
     </section>
 
-    <!-- FIELDVISION FEATURE -->
-    <section id="fieldvision" class="feature" aria-labelledby="fv-title">
-      <div class="wrap">
-        <div class="feature-head">
-          <p class="feature-award">Grand Prize, Hack the Harvest 2026</p>
-          <h2 id="fv-title">FieldVision</h2>
-          <p class="feature-q">Can you tell what happened in a cornfield from space?</p>
-        </div>
-
-        <div class="feature-grid">
-          <div class="feature-story">
-            <p>
-              The USDA wanted to know how much US corn is chopped for silage (cattle feed) versus harvested for grain,
-              without waiting months for survey numbers. Our team of five built a system that makes that call field by
-              field from free Sentinel-2 and Landsat images, then adds it up to county and state estimates.
-            </p>
-            <p>
-              We built it in 22.5 hours at Aggie Square in Sacramento. Judges came from USDA, NVIDIA, Niantic Spatial and UC Davis.
-            </p>
-            <h3>What I worked on</h3>
-            <ul class="plain-list">
-              <li><strong>Bayesian modeling.</strong> Clouds hide the harvest in some weeks. We used Bayes' theorem and
-                past USDA numbers to estimate those hidden fields instead of guessing.</li>
-              <li><strong>Checking against USDA reports.</strong> A retrieval step pulls USDA QuickStats and NASS crop
-                progress reports, checks each county estimate against them, and cites the source when something looks
-                off.</li>
-              <li><strong>Making the agents reliable.</strong> NVIDIA Nemotron models run the pipeline step by step.
-                Code checks every number they write, so the report never states a figure it can't trace.</li>
-            </ul>
-            <p class="stack">Python, scikit-learn, GeoPandas, rasterio, Sentinel-2, Landsat 8/9, FastAPI, Leaflet,
-              NVIDIA Nemotron, pytest</p>
-            <div class="feature-links">
-              <a class="btn btn-wheat" href="https://github.com/hima-v/FieldVision" target="_blank"
-                rel="noopener noreferrer">Code on GitHub</a>
-              <a class="btn btn-line-light"
-                href="https://github.com/hima-v/FieldVision/blob/main/handoff/presentation/FieldVision.pdf"
-                target="_blank" rel="noopener noreferrer">Final slides (PDF)</a>
-            </div>
-          </div>
-
-          <div class="feature-results">
-            <figure class="bars" id="state-bars">
-              <figcaption>
-                <strong>Graded against USDA NASS 2025.</strong> Silage share of harvested corn by state. Each state was
-                run once, with the method written down before any 2025 image was scored.
-              </figcaption>
-              <div class="bars-legend" aria-hidden="true">
-                <span><i class="sw sw-fv"></i>FieldVision</span>
-                <span><i class="sw sw-usda"></i>USDA</span>
-              </div>
-              <dl class="bars-list">
-                <div class="bar-row" style="--fv:14.4; --usda:14.7">
-                  <dt>Michigan</dt>
-                  <dd><span class="bar bar-fv"></span><span class="bar bar-usda"></span><span class="bar-val">14.4% vs
-                      14.7%</span></dd>
-                </div>
-                <div class="bar-row" style="--fv:48.7; --usda:53.2">
-                  <dt>New York</dt>
-                  <dd><span class="bar bar-fv"></span><span class="bar bar-usda"></span><span class="bar-val">48.7% vs
-                      53.2%</span></dd>
-                </div>
-                <div class="bar-row" style="--fv:4.75; --usda:8.9">
-                  <dt>Maryland</dt>
-                  <dd><span class="bar bar-fv"></span><span class="bar bar-usda"></span><span class="bar-val">4.8% vs
-                      8.9%</span></dd>
-                </div>
-                <div class="bar-row" style="--fv:16.6; --usda:21.6">
-                  <dt>Wisconsin</dt>
-                  <dd><span class="bar bar-fv"></span><span class="bar bar-usda"></span><span class="bar-val">16.6% vs
-                      21.6%</span></dd>
-                </div>
-                <div class="bar-row is-miss" style="--fv:15.2; --usda:32.8">
-                  <dt>Pennsylvania</dt>
-                  <dd><span class="bar bar-fv"></span><span class="bar bar-usda"></span><span class="bar-val">15.2% vs
-                      32.8%</span></dd>
-                </div>
-              </dl>
-              <p class="bars-note">4 of 5 states within 5 points. Pennsylvania is the miss: silage cut late, after the
-                crop yellows, looks like grain from space.</p>
-            </figure>
-
-            <ul class="fv-stats">
-              <li><b>42 of 44</b><span>labelled US fields called right (95.5%), with no US labels in training</span></li>
-              <li><b>13.3 to 1.4</b><span>average point gap in TX, CA and CO after adding USDA history</span></li>
-              <li><b>290</b><span>automated tests across the models and agents</span></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="pipeline">
-          <h3>The pipeline, in order</h3>
-          <ol class="pipeline-steps">
-            <li><b>Ingest</b><span>Per-field image time series every 5 days from two satellites</span></li>
-            <li><b>Cloud check</b><span>Only judge a field when clear images bracket the harvest</span></li>
-            <li><b>Classify</b><span>Logistic regression on 6 physical harvest features</span></li>
-            <li><b>Cloud-gap Bayes</b><span>Estimate fields cut while clouds were overhead</span></li>
-            <li><b>USDA prior</b><span>Pull each estimate toward the state's recent USDA share</span></li>
-            <li><b>Report check</b><span>Compare every county with USDA reports and cite them</span></li>
-            <li><b>Silage match</b><span>Match dairies short on feed to standing corn nearby</span></li>
-            <li><b>Orchestrate</b><span>Agents pick each step; code verifies every number</span></li>
-            <li><b>Watch</b><span>Re-run only when new images move the estimate</span></li>
-          </ol>
-          <p class="team-credit">Team: Hetvi Bhadani, Hima Verma, Krishi Shah, Priyanka Ramachandran, Siyun Chen.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- PROJECTS -->
     <section id="work" class="section" aria-labelledby="work-title">
       <div class="wrap">
@@ -253,6 +145,43 @@
         </div>
 
         <ul class="projects">
+          <li class="project" id="fieldvision">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="p-fieldvision">
+              <span class="p-name">FieldVision</span>
+              <span class="p-line">Reading cornfields from space. Hack the Harvest 2026 winner</span>
+              <span class="p-when">2026</span>
+              <span class="p-icon" aria-hidden="true"></span>
+            </button>
+            <div class="project-body" id="p-fieldvision">
+              <div class="project-inner">
+                <div class="p-cols">
+                  <div>
+                    <p>The USDA wanted to know how much US corn is chopped for silage (cattle feed) versus harvested for
+                      grain, without waiting months for survey numbers. Our team of five built a system that makes that
+                      call field by field from free Sentinel-2 and Landsat images, then adds it up to county and state
+                      estimates. We built it in 22.5 hours at Aggie Square in Sacramento.</p>
+                    <p>I worked on the Bayesian modeling that estimates fields hidden by clouds, the retrieval step that
+                      checks each county against USDA reports and cites them, and making the NVIDIA Nemotron agents
+                      reliable.</p>
+                  </div>
+                  <ul class="p-facts">
+                    <li><b>Grand Prize</b>, judged by USDA, NVIDIA, Niantic Spatial and UC Davis</li>
+                    <li><b>42 of 44</b> labelled US fields called right (95.5%), with no US labels in training</li>
+                    <li><b>4 of 5</b> graded states within 5 points of USDA's 2025 numbers</li>
+                    <li><b>13.3 to 1.4</b> average point gap in TX, CA and CO after adding USDA history</li>
+                  </ul>
+                </div>
+                <p class="stack">Python, scikit-learn, GeoPandas, rasterio, Sentinel-2, Landsat 8/9, FastAPI, Leaflet,
+                  NVIDIA Nemotron, pytest</p>
+                <div class="p-links">
+                  <a href="https://github.com/hima-v/FieldVision" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a href="https://github.com/hima-v/FieldVision/blob/main/handoff/presentation/FieldVision.pdf"
+                    target="_blank" rel="noopener noreferrer">Final slides (PDF)</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
           <li class="project">
             <button class="project-toggle" type="button" aria-expanded="false" aria-controls="p-explainlog">
               <span class="p-name">ExplainLOG</span>
