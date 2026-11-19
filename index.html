@@ -29,6 +29,7 @@
       <a class="brand" href="#top">Hima Verma</a>
       <nav aria-label="Primary">
         <ul class="nav">
+          <li><a href="#endeavours">Endeavours</a></li>
           <li><a href="#fieldvision">FieldVision</a></li>
           <li><a href="#work">Projects</a></li>
           <li><a href="#experience">Experience</a></li>
@@ -48,7 +49,7 @@
           <h1>Hima<br />Verma</h1>
           <p class="hero-lead">I build data pipelines, ML models and the tools people use to make sense of them.</p>
           <p class="hero-now">
-            CS master's student at UC Davis, graduating Dec 2027. Software engineer intern at UC Davis Development
+            CS master's student at UC Davis (GPA 3.85), graduating Dec 2027. Software engineer intern at UC Davis Development
             &amp; Alumni Relations, and a researcher in the VIA Lab.
           </p>
           <div class="hero-actions">
@@ -62,13 +63,76 @@
         </div>
 
         <figure class="hero-viz">
-          <canvas id="cluster-canvas" aria-hidden="true"></canvas>
-          <figcaption>
-            <span>Noise in, structure out. 520 points finding 8 groups, the way ExplainLOG sorts 11.2M log lines into
-              failure types.</span>
-            <button type="button" class="link-btn" id="rescatter">Scatter again</button>
+          <p class="flow-intro">How my work moves data, from what comes in to what people use. Pick a project or point at a
+            step.</p>
+          <div class="flow" id="flow">
+            <svg id="flow-svg" role="img" aria-labelledby="flow-title">
+              <title id="flow-title">A map of my projects: the data each one starts from, how it is modeled, and what it
+                ships as.</title>
+            </svg>
+          </div>
+          <figcaption class="flow-caption">
+            <div class="flow-chips" id="flow-chips" role="group" aria-label="Pick a project"></div>
+            <p class="flow-note" id="flow-note" aria-live="polite"></p>
           </figcaption>
         </figure>
+      </div>
+    </section>
+
+    <!-- ENDEAVOURS -->
+    <section id="endeavours" class="section endeavours" aria-labelledby="end-title">
+      <div class="wrap">
+        <div class="end-head">
+          <div class="section-head">
+            <h2 id="end-title">Endeavours</h2>
+            <p>Hackathons, conferences and the rooms I learned the most in.</p>
+          </div>
+          <div class="slide-controls">
+            <button type="button" class="slide-btn" id="slide-prev" aria-label="Previous slide">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+            </button>
+            <span class="slide-count" id="slide-count" aria-live="polite">1 of 3</span>
+            <button type="button" class="slide-btn" id="slide-next" aria-label="Next slide">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="slides" id="slides" tabindex="0" role="region" aria-roledescription="carousel"
+          aria-label="Endeavours">
+          <figure class="slide" aria-roledescription="slide" aria-label="1 of 3">
+            <div class="slide-media">
+              <img src="./assets/endeavours/htth-win.jpg"
+                alt="Hima holding the Hack the Harvest prize check made out to Field Vision for $5,000" loading="lazy" />
+            </div>
+            <figcaption>
+              <p class="slide-meta">Hackathon</p>
+              <h3><a class="slide-link" href="#fieldvision">Hack the Harvest 2026 Winner</a></h3>
+            </figcaption>
+          </figure>
+
+          <figure class="slide" aria-roledescription="slide" aria-label="2 of 3">
+            <div class="slide-media">
+              <img src="./assets/endeavours/pytorchcon-hima.jpg"
+                alt="Hima at the San Jose Convention Center during PyTorch Conference" loading="lazy" />
+            </div>
+            <figcaption>
+              <p class="slide-meta">Conference</p>
+              <h3>PyTorchCon'26</h3>
+            </figcaption>
+          </figure>
+
+          <figure class="slide" aria-roledescription="slide" aria-label="3 of 3">
+            <div class="slide-media">
+              <img src="./assets/endeavours/pytorchcon-talk.jpg"
+                alt="A PyTorch Conference talk slide reading: We're already in the agentic era" loading="lazy" />
+            </div>
+            <figcaption>
+              <p class="slide-meta">Conference</p>
+              <h3>PyTorchCon'26</h3>
+            </figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -89,7 +153,7 @@
               field from free Sentinel-2 and Landsat images, then adds it up to county and state estimates.
             </p>
             <p>
-              We built it in 22.5 hours at UC Davis. Judges came from USDA, NVIDIA, Niantic Spatial and UC Davis.
+              We built it in 22.5 hours at Aggie Square in Sacramento. Judges came from USDA, NVIDIA, Niantic Spatial and UC Davis.
             </p>
             <h3>What I worked on</h3>
             <ul class="plain-list">
@@ -479,10 +543,25 @@
 
           <article class="r-item">
             <p class="r-meta">Advanced NLP, Fall 2026</p>
-            <h3>Shrinking long context without losing the facts that connect it</h3>
-            <p>When a question needs facts from two documents, compressing the retrieved text can drop the one sentence
-              that links them. Our group is training a small sentence encoder to keep those bridge facts within a fixed
-              token budget, and measuring answer quality, recall of supporting facts, tokens and latency.</p>
+            <h3>Can an AI improve how it improves?</h3>
+            <p>With Ketki Kulkarni and Shawn Bowser, I presented Meta's HyperAgents paper. It merges the agent that
+              solves a task and the agent that edits it into one program, so the system can rewrite how it improves,
+              not just its answers. We covered results in coding, paper review, robotics and math grading, then pushed
+              on the gaps: it matches past reviewer decisions rather than judging quality, isn't clearly better than a
+              hand-tuned baseline, and costs about 83.6M tokens per run.</p>
+            <div class="p-links">
+              <a href="./hyperagents-ppt-final.pdf" target="_blank" rel="noopener noreferrer">Our slides (PDF)</a>
+              <a href="https://arxiv.org/abs/2603.19461" target="_blank" rel="noopener noreferrer">The paper</a>
+            </div>
+          </article>
+
+          <article class="r-item">
+            <p class="r-meta">Advanced NLP project, Sep 2026 – now</p>
+            <h3>streaMRAG: answering questions about live video</h3>
+            <p>A retrieval setup for video streams that needs no training. It checks whether each retrieved moment
+              actually supports an answer, reasons about when things happened, and keeps a compact memory within a
+              fixed token budget so answers stay grounded in what was seen.</p>
+            <p class="stack">Python, PyTorch, Hugging Face, vision-language models, NLI, RAG</p>
             <div class="p-links">
               <a href="https://github.com/hima-v/streaMRAG" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
@@ -529,7 +608,7 @@
 
         <div class="courses">
           <div>
-            <h3>UC Davis, M.S. Computer Science</h3>
+            <h3>UC Davis, M.S. Computer Science, GPA 3.85</h3>
             <ul class="course-list">
               <li>Advanced NLP</li>
               <li>Machine Learning &amp; Discovery</li>
