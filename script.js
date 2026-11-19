@@ -31,6 +31,18 @@
     sections.forEach((s) => navObserver.observe(s));
   }
 
+  // Links like #fieldvision open that project's row
+  const openProject = (hash) => {
+    const row = hash && hash.length > 1 ? document.getElementById(hash.slice(1)) : null;
+    if (!row || !row.classList.contains("project")) return;
+    const btn = row.querySelector(".project-toggle");
+    if (btn && btn.getAttribute("aria-expanded") !== "true") btn.click();
+  };
+  document.addEventListener("click", (e) => {
+    const a = e.target instanceof Element ? e.target.closest("a[href^='#']") : null;
+    if (a) openProject(a.getAttribute("href"));
+  });
+
   // Expandable project rows
   document.querySelectorAll(".project-toggle").forEach((btn) => {
     const body = document.getElementById(btn.getAttribute("aria-controls"));
@@ -43,25 +55,6 @@
       body.inert = !open;
     });
   });
-
-  // FieldVision bars grow when they come into view
-  const bars = document.getElementById("state-bars");
-  if (bars) {
-    if (reduceMotion || !("IntersectionObserver" in window)) {
-      bars.classList.add("is-visible");
-    } else {
-      const barObserver = new IntersectionObserver(
-        (entries, obs) => {
-          if (entries[0].isIntersecting) {
-            bars.classList.add("is-visible");
-            obs.disconnect();
-          }
-        },
-        { threshold: 0.35 }
-      );
-      barObserver.observe(bars);
-    }
-  }
 
   // Experience rail fills as you scroll through it
   const timeline = document.getElementById("timeline");
@@ -129,6 +122,8 @@
     });
     setCurrent(0);
   }
+
+  openProject(window.location.hash);
 
   // Hero: a map of my projects, from the data they start with to what they ship as
   const flow = document.getElementById("flow");
