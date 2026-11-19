@@ -48,17 +48,15 @@
           <h1>Hima<br />Verma</h1>
           <p class="hero-lead">I build data pipelines, ML models and the tools people use to make sense of them.</p>
           <p class="hero-now">
-            CS master's student at UC Davis (GPA 3.85), graduating Dec 2027. Software engineer intern at UC Davis Development
-            &amp; Alumni Relations, and a researcher in the VIA Lab.
+            I've been building end-to-end systems that solve real problems for users, and I love researching and
+            keeping up with guardrails, LLM inference and human-in-the-loop dashboards. I'm currently a CS master's
+            student at UC Davis (GPA 3.85, graduating Dec 2027), a software engineer intern at UC Davis Development
+            &amp; Alumni Relations, and a graduate researcher in the VIA Lab.
           </p>
           <div class="hero-actions">
             <a class="btn btn-solid" href="#work">See my projects</a>
             <a class="btn btn-line" href="mailto:hima.v2402@gmail.com">Email me</a>
           </div>
-          <a class="hero-badge" href="#fieldvision">
-            <span class="badge-dot" aria-hidden="true"></span>
-            1st place, Hack the Harvest 2026 (USDA challenge)
-          </a>
         </div>
 
         <figure class="hero-viz">
@@ -135,6 +133,37 @@
       </div>
     </section>
 
+    <!-- AWARDS -->
+    <section id="awards" class="section awards" aria-labelledby="awards-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="awards-title">Awards</h2>
+        </div>
+        <ul class="award-list">
+          <li class="award">
+            <p class="award-when">Nov 2026</p>
+            <div>
+              <h3>Hack the Harvest 2026, Grand Prize</h3>
+              <p class="award-from">USDA challenge at Aggie Square, judged by USDA, NVIDIA, Niantic Spatial and UC Davis</p>
+              <p>As team lead, I helped five of us turn free satellite images into field-by-field corn harvest
+                estimates in 22.5 hours, with NVIDIA Nemotron agents running the pipeline and checking every number
+                against USDA reports. We won the $5,000 first prize. <a href="#fieldvision">See the project</a></p>
+            </div>
+          </li>
+          <li class="award">
+            <p class="award-when">KJSIT</p>
+            <div>
+              <h3>Letter of Recognition, College of Engineering</h3>
+              <p class="award-from">K. J. Somaiya Institute of Technology, Mumbai</p>
+              <p>For building the PGM Virtual Lab, a hands-on platform for the Probabilistic Graphical Models course.
+                It supported 400+ students, ran on the college server and as a mobile app, and helped course
+                enrollment grow 129%. <a href="#vlab">See the project</a></p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
     <!-- PROJECTS -->
     <section id="work" class="section" aria-labelledby="work-title">
       <div class="wrap">
@@ -182,7 +211,7 @@
             </div>
           </li>
 
-          <li class="project">
+          <li class="project" id="explainlog">
             <button class="project-toggle" type="button" aria-expanded="false" aria-controls="p-explainlog">
               <span class="p-name">ExplainLOG</span>
               <span class="p-line">A dashboard for debugging failures in distributed system logs</span>
@@ -218,7 +247,7 @@
             </div>
           </li>
 
-          <li class="project">
+          <li class="project" id="pairs">
             <button class="project-toggle" type="button" aria-expanded="false" aria-controls="p-pairs">
               <span class="p-name">Pairs Trading with ML</span>
               <span class="p-line">Finding stocks that move together, and trading when they drift apart</span>
@@ -250,7 +279,7 @@
             </div>
           </li>
 
-          <li class="project">
+          <li class="project" id="spotify">
             <button class="project-toggle" type="button" aria-expanded="false" aria-controls="p-spotify">
               <span class="p-name">Spotify Automation</span>
               <span class="p-line">Saves your Discover Weekly before it rotates out</span>
@@ -284,7 +313,7 @@
             </div>
           </li>
 
-          <li class="project">
+          <li class="project" id="vlab">
             <button class="project-toggle" type="button" aria-expanded="false" aria-controls="p-vlab">
               <span class="p-name">PGM Virtual Lab</span>
               <span class="p-line">Hands-on lab for a probability course, used by 400+ students</span>
@@ -315,7 +344,7 @@
             </div>
           </li>
 
-          <li class="project">
+          <li class="project" id="gunrock">
             <button class="project-toggle" type="button" aria-expanded="false" aria-controls="p-gunrock">
               <span class="p-name">Gunrock's Grid</span>
               <span class="p-line">Where Aggies can actually afford to live, from scraped listings</span>
@@ -611,18 +640,22 @@
           <h2 id="about-title">About</h2>
         </div>
         <div class="about-copy">
-          <p class="about-big">I like the last 10% of a project: how it feels to use, how it holds up on messy data,
-            and whether someone can trust the number on the screen.</p>
-          <p>I grew up in Mumbai and moved to Davis for my master's. Before code paid any bills I taught math, helped
-            run our Engineering Mathematics class online during COVID, organized a CodeChef contest with 634 sign-ups, and co-founded a fashion
-            brand. All of that still shows up in how I build: start with the person using it, test early, ship.</p>
-          <p>Off the keyboard I explore other cultures through books and cooking, play cricket and badminton, go rafting and
-            hiking, and play electronic keyboard (Trinity Grade 3). Also, I'm a cat person.</p>
+          <p class="about-big">I've always ventured into every domain I could, because exploring is how I pick up
+            skills that transfer.</p>
+          <p>I build for real users, serve real people, and collaborate with both humans and AI. I've worked at a
+            startup, founded a fashion company with my friends, and taught math at an NGO. I've explored a lot, and
+            I want to keep going. Now I'm ready to commit to one company for the long run, make a real impact there,
+            and bring everything I've picked up along the way.</p>
+          <p>Outside of work, I love being outdoors, whether that's rafting, hiking, or playing cricket and
+            badminton. I explore other cultures through reading and cooking, I play electronic keyboard (Trinity
+            College London, Grade 3), and I document what I'm learning as an Instagram creator. Also, I'm a cat
+            person.</p>
+          <p class="about-label">Communities I'm part of</p>
           <ul class="about-tags">
             <li>Grace Hopper 2026</li>
-            <li>Tapia 2026</li>
-            <li>She+ Tech</li>
             <li>Adobe Student Community</li>
+            <li>She+ Tech</li>
+            <li>Errichto competitive programming</li>
           </ul>
         </div>
       </div>
@@ -632,8 +665,9 @@
     <section id="contact" class="section contact" aria-labelledby="contact-title">
       <div class="wrap">
         <h2 id="contact-title">Say hi</h2>
-        <p class="contact-lead">I'm open to software engineering roles and always up for a good conversation about
-          data, ML or building things people use.</p>
+        <p class="contact-lead">I'm open to software engineering roles and always up for a coffee chat. I'm genuinely
+          curious, and I love going to conferences and tech sessions around the Bay Area. Early in my career, I want
+          to keep widening my perspective, so reach out about data, ML or building things people use.</p>
         <a class="contact-email" href="mailto:hima.v2402@gmail.com">hima.v2402@gmail.com</a>
         <ul class="contact-list">
           <li><a href="mailto:imaverma@ucdavis.edu">imaverma@ucdavis.edu</a><span>for research and academics</span></li>
