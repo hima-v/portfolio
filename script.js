@@ -143,7 +143,7 @@
     { id: "explainlog", name: "ExplainLOG", from: ["logs"], via: ["dl", "llm"], to: ["dash"],
       note: "Sorts 11.2M log lines into 8 failure types and explains each one in plain English.", href: "#work" },
     { id: "via", name: "VIA Lab", from: ["video"], via: ["ml", "dl"], to: ["report"],
-      note: "Finding which moments, sounds and visuals make a short video feel intense.", href: "#research" },
+      note: "Exploring how people perceive short videos, using multimodal time-series models.", href: "#research" },
     { id: "streamrag", name: "streaMRAG", from: ["video"], via: ["llm"], to: ["report"],
       note: "Answers questions about video streams from a compact, grounded memory.", href: "#research" },
     { id: "devar", name: "UC Davis DEVAR", from: ["web"], via: ["sql"], to: ["app", "dash"],
