@@ -323,25 +323,301 @@ ol {
   position: relative;
 }
 
-#cluster-canvas {
-  width: 100%;
-  aspect-ratio: 6 / 5;
-  border-radius: 28px;
-  background: #fff;
-  border: 1px solid var(--line);
-  cursor: crosshair;
-  touch-action: pan-y;
+/* project flow map */
+.flow-intro {
+  font-size: 15px;
+  color: var(--graphite);
+  margin: 0 0 12px;
+  max-width: 52ch;
 }
 
-.hero-viz figcaption {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 16px;
-  margin-top: 12px;
+.flow {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 20px 20px 16px;
+}
+
+#flow-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--font);
+}
+
+.f-col-label {
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--graphite);
+}
+
+.f-edge {
+  fill: none;
+  stroke: var(--ink);
+  stroke-opacity: 0.09;
+  stroke-width: 1.25;
+  transition: stroke-opacity 220ms, stroke 220ms, stroke-width 220ms;
+}
+
+.f-edge.is-on {
+  stroke: var(--pink);
+  stroke-opacity: 0.85;
+  stroke-width: 2;
+}
+
+.flow.is-narrow .f-edge:not(.is-on) {
+  stroke-opacity: 0;
+}
+
+.f-node {
+  cursor: pointer;
+}
+
+.f-node rect {
+  fill: #fff;
+  stroke: var(--line);
+  stroke-width: 1.25;
+  transition: fill 220ms, stroke 220ms;
+}
+
+.f-node text {
   font-size: 14px;
+  font-weight: 500;
+  fill: var(--ink);
+  transition: fill 220ms;
+  pointer-events: none;
+}
+
+.flow.is-narrow .f-node text {
+  font-size: 13px;
+}
+
+.f-node.is-dim text {
+  fill: #9aa0a8;
+}
+
+.f-node.is-on rect {
+  fill: var(--ink);
+  stroke: var(--ink);
+}
+
+.f-node.is-on text {
+  fill: #fff;
+}
+
+.f-node:focus-visible {
+  outline: none;
+}
+
+.f-node:focus-visible rect {
+  stroke: var(--pink);
+  stroke-width: 2.5;
+}
+
+.f-packet {
+  fill: var(--pink-bright);
+}
+
+.flow-caption {
+  margin-top: 14px;
+}
+
+.flow-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.chip {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color 160ms, color 160ms, border-color 160ms;
+}
+
+.chip:hover,
+.chip.is-related {
+  border-color: var(--ink);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.flow-note {
+  margin: 0;
+  font-size: 15px;
+  min-height: 3.2em;
+  max-width: 60ch;
+}
+
+.flow-note b {
+  font-weight: 700;
+}
+
+/* ---------- Endeavours ---------- */
+.endeavours {
+  padding-bottom: clamp(56px, 7vw, 88px);
+}
+
+.end-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.slide-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: clamp(28px, 4vw, 48px);
+  flex-shrink: 0;
+}
+
+.slide-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1.5px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background-color 160ms, color 160ms, opacity 160ms;
+}
+
+.slide-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.slide-btn:hover:not(:disabled) {
+  background: var(--ink);
+  color: #fff;
+}
+
+.slide-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.slide-count {
+  font-size: 15px;
   color: var(--graphite);
-  padding: 0 4px;
+  font-variant-numeric: tabular-nums;
+  min-width: 3.5em;
+  text-align: center;
+}
+
+.slides {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min(66%, 700px);
+  gap: clamp(16px, 3vw, 32px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+
+.slides::-webkit-scrollbar {
+  display: none;
+}
+
+.slides:focus-visible {
+  outline-offset: 6px;
+}
+
+.slide {
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.slide-media {
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.slide-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-art {
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(20px, 4vw, 40px);
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.art-small {
+  font-size: clamp(15px, 1.8vw, 20px);
+  color: var(--pink-bright);
+  font-weight: 700;
+}
+
+.art-big {
+  font-size: clamp(32px, 5.5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 6px 0 18px;
+}
+
+.art-topics {
+  font-size: clamp(13px, 1.4vw, 16px);
+  color: #b9bec6;
+  line-height: 1.5;
+}
+
+.slide figcaption {
+  padding: 18px 4px 0;
+}
+
+.slide-meta {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--pink);
+  margin-bottom: 6px;
+}
+
+.slide h3 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.slide figcaption p:last-child {
+  color: var(--graphite);
+  max-width: 60ch;
+  margin: 0;
 }
 
 /* ---------- FieldVision feature ---------- */
@@ -1111,8 +1387,8 @@ ol {
   }
 
 
-  #cluster-canvas {
-    aspect-ratio: 4 / 3;
+  .slides {
+    grid-auto-columns: 88%;
   }
 
   .project-toggle {
@@ -1193,9 +1469,18 @@ ol {
     grid-template-columns: 88px 1fr;
   }
 
-  .hero-viz figcaption {
+  .end-head {
     flex-direction: column;
-    gap: 4px;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .slide-controls {
+    margin-top: -12px;
+  }
+
+  .flow {
+    padding: 14px 12px 12px;
   }
 
   .footer-inner {
