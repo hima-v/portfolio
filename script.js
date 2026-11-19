@@ -133,7 +133,7 @@
   if (!flow || !svg || !chipsEl || !noteEl) return;
 
   const COLUMNS = [
-    { label: "Data in", nodes: [["sat", "Satellite images"], ["video", "Video"], ["logs", "System logs"], ["web", "APIs & scraping"]] },
+    { label: "Data in", nodes: [["sat", "Satellite images"], ["video", "Video"], ["logs", "System logs"], ["market", "Market data"], ["web", "APIs & scraping"]] },
     { label: "Modeling", nodes: [["sql", "Data modeling & SQL"], ["ml", "Classical ML"], ["bayes", "Bayesian inference"], ["dl", "Deep learning"], ["llm", "Retrieval & LLMs"]] },
     { label: "Shipped as", nodes: [["dash", "Dashboards"], ["app", "Web apps"], ["report", "Reports & answers"]] },
   ];
@@ -141,7 +141,9 @@
     { id: "fieldvision", name: "FieldVision", from: ["sat"], via: ["ml", "bayes", "llm"], to: ["report", "app"],
       note: "Calls silage vs grain corn field by field from satellite images. 1st place at Hack the Harvest 2026.", href: "#fieldvision" },
     { id: "explainlog", name: "ExplainLOG", from: ["logs"], via: ["dl", "llm"], to: ["dash"],
-      note: "Sorts 11.2M log lines into 8 failure types and explains each one in plain English.", href: "#work" },
+      note: "Sorts 11.2M log lines into 8 failure types and explains each one in plain English.", href: "#explainlog" },
+    { id: "pairs", name: "Pairs Trading", from: ["market"], via: ["dl", "ml"], to: ["report"],
+      note: "Finds S&P 500 stocks that move together with autoencoder embeddings and K-Means, then trades the gaps. 0.93 ROC-AUC.", href: "#pairs" },
     { id: "via", name: "VIA Lab", from: ["video"], via: ["ml", "dl"], to: ["report"],
       note: "Exploring how people perceive short videos, using multimodal time-series models.", href: "#research" },
     { id: "streamrag", name: "streaMRAG", from: ["video"], via: ["llm"], to: ["report"],
@@ -149,9 +151,9 @@
     { id: "devar", name: "UC Davis DEVAR", from: ["web"], via: ["sql"], to: ["app", "dash"],
       note: "A workflow platform for 100+ users, built on 20 years of migrated data.", href: "#experience" },
     { id: "spotify", name: "Spotify Automation", from: ["web"], via: ["sql"], to: ["app"],
-      note: "Saves Discover Weekly every week, with a job queue, retries and a run history.", href: "#work" },
+      note: "Saves Discover Weekly every week, with a job queue, retries and a run history.", href: "#spotify" },
     { id: "gunrock", name: "Gunrock's Grid", from: ["web"], via: ["sql"], to: ["dash"],
-      note: "Turns scraped Davis rental listings into a clean dataset and a dashboard.", href: "#work" },
+      note: "Turns scraped Davis rental listings into a clean dataset and a dashboard.", href: "#gunrock" },
   ];
   const NS = "http://www.w3.org/2000/svg";
   const el = (tag, attrs, parent) => {
