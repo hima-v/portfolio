@@ -219,6 +219,38 @@
           </li>
 
           <li class="project">
+            <button class="project-toggle" type="button" aria-expanded="false" aria-controls="p-pairs">
+              <span class="p-name">Pairs Trading with ML</span>
+              <span class="p-line">Finding stocks that move together, and trading when they drift apart</span>
+              <span class="p-when">2025</span>
+              <span class="p-icon" aria-hidden="true"></span>
+            </button>
+            <div class="project-body" id="p-pairs">
+              <div class="project-inner">
+                <div class="p-cols">
+                  <div>
+                    <p>Statistical arbitrage bets that two related stocks will snap back after their prices drift
+                      apart. We processed 14 years of S&amp;P 500 data, compressed each stock's history with an
+                      autoencoder, clustered the results to shortlist candidate pairs, then tested which pairs really
+                      move together and revert to the mean. ML models then scored which signals were worth trading.</p>
+                  </div>
+                  <ul class="p-facts">
+                    <li><b>14 years</b> of S&amp;P 500 price data</li>
+                    <li><b>300 to 10</b> dimensions with autoencoder embeddings, then K-Means for pair selection</li>
+                    <li><b>780 pairs</b> checked for cointegration and mean reversion</li>
+                    <li><b>0.93 ROC-AUC</b> from the best ML model</li>
+                  </ul>
+                </div>
+                <p class="stack">Python, scikit-learn, XGBoost, pandas</p>
+                <div class="p-links">
+                  <a href="https://github.com/Priyankaa2503/Machine-Learning-Based-Pairs-Trading" target="_blank"
+                    rel="noopener noreferrer">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="project">
             <button class="project-toggle" type="button" aria-expanded="false" aria-controls="p-spotify">
               <span class="p-name">Spotify Automation</span>
               <span class="p-line">Saves your Discover Weekly before it rotates out</span>
@@ -384,8 +416,8 @@
               <h3>VIA Lab, UC Davis</h3>
               <p class="t-role">Graduate Research Assistant with Prof. Dongyu Liu</p>
               <ul>
-                <li>Studying how short videos make people feel, and which moments, sounds and visuals drive that. More
-                  in <a href="#research">Research</a>.</li>
+                <li>Exploring how people perceive short-form video with multimodal time-series models. More in <a
+                    href="#research">Research</a>.</li>
               </ul>
             </div>
           </li>
@@ -456,17 +488,16 @@
           <article class="r-item r-lead">
             <div>
               <p class="r-meta">VIA Lab, Sep 2026 – now</p>
-              <h3>What makes a short video feel intense?</h3>
+              <h3>How people experience short videos</h3>
             </div>
             <div>
-              <p>With Prof. Dongyu Liu, I'm studying how viewers react to short videos and which moments, sounds and
-                visuals drive that reaction. I started by reproducing two published studies end to end, one using
-                multimodal models as stand-in study participants and one using a random forest baseline. Now I'm
-                testing models that look at how features change over time inside a video.</p>
-              <p class="stack">Python, PyTorch, scikit-learn, Gemini, Qwen</p>
-              <div class="p-links">
-                <a href="https://github.com/hima-v/cogniViz" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
+              <p>With Prof. Dongyu Liu, I'm exploring how people perceive short-form video, treating each clip as a
+                multimodal time series of what you see, hear and read on screen. I'm working with temporal models like
+                ModernTCN to capture how that experience builds moment to moment, occlusion analysis to find which
+                moments and signals matter most, and human-in-the-loop dashboards so researchers can check and
+                question what the models pick up.</p>
+              <p class="stack">Python, PyTorch, ModernTCN, time-series modeling, multimodal LLMs, occlusion analysis,
+                visual analytics</p>
             </div>
           </article>
 
@@ -520,8 +551,13 @@
           <article class="r-item">
             <p class="r-meta">ECS 252 Computer Networks, Mar – Jun 2026</p>
             <h3>Is broadband as fast as advertised?</h3>
-            <p>Joined 23K+ speed tests with FCC and Census data across Sacramento County. Advertised speeds beat
-              measured speeds in every ZIP code, and rural areas were 2.8x slower.</p>
+            <p>A network measurement study of Sacramento County. We pulled 23K+ M-Lab NDT speed tests from BigQuery
+              (download throughput, latency, packet loss and ISP metadata), filtered out unrealistic tests, and joined
+              them with FCC-reported speeds, Census ACS demographics and USDA rural codes at the census tract level.
+              Advertised speeds beat measured speeds in every ZIP code, and rural areas were 2.8x slower.</p>
+            <p>The course also covered congestion control in data centers (DCQCN, RDMA), BGP and routing security, VPN
+              and IP geolocation measurement, and ISP traffic throttling.</p>
+            <p class="stack">Python, BigQuery, M-Lab NDT, FCC broadband data, Census ACS, pandas</p>
             <div class="p-links">
               <a href="./broadband-equity-analysis.pdf" target="_blank" rel="noopener noreferrer">Report (PDF)</a>
             </div>
@@ -557,6 +593,11 @@
               <li>Distributed Computing</li>
               <li>Probabilistic Graphical Models</li>
               <li>Cryptography &amp; System Security</li>
+              <li>System Programming</li>
+              <li>Computer Architecture</li>
+              <li>Applied Data Science</li>
+              <li>Information Retrieval</li>
+              <li>Quantitative Analysis</li>
             </ul>
           </div>
         </div>
