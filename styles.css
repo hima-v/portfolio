@@ -905,6 +905,50 @@ ol {
 }
 
 
+/* ---------- Awards ---------- */
+.awards {
+  padding-top: 0;
+}
+
+.award-list {
+  list-style: none;
+  border-top: 1.5px solid var(--ink);
+}
+
+.award {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 8px 40px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.award-when {
+  margin: 0;
+  font-size: 15px;
+  color: var(--graphite);
+  padding-top: 4px;
+}
+
+.award h3 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.award-from {
+  font-size: 15px;
+  color: var(--pink);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.award p:last-child {
+  max-width: 68ch;
+  margin: 0;
+}
+
 /* ---------- About ---------- */
 .about-grid {
   display: grid;
@@ -922,6 +966,13 @@ ol {
   font-weight: 500;
   letter-spacing: -0.015em;
   margin-bottom: 24px;
+}
+
+.about-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--graphite);
+  margin: 28px 0 10px;
 }
 
 .about-tags {
@@ -1073,6 +1124,10 @@ ol {
 
   .t-body {
     padding-left: 0;
+  }
+
+  .award {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
